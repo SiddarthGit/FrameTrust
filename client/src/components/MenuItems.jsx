@@ -5,7 +5,7 @@ import { NavLink } from "react-router-dom";
 const MenuItems = ({ setSidebarOpen }) => {
   return (
     <div className="px-6 text-gray-600 space-y-1 font-medium">
-      {menuItemsData.map((to, label, Icon) => (
+      {menuItemsData.map(({ to, label, Icon }) => (
         <NavLink
           key={to}
           to={to}
