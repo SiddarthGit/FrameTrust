@@ -1,8 +1,19 @@
-import { BadgeCheck } from "lucide-react";
-import React from "react";
+import { BadgeCheck, Heart, MessageCircle, Share2 } from "lucide-react";
+import React, { useState } from "react";
 import moment from "moment";
+import { dummyUserData } from "../assets/assets";
 
 const PostCard = ({ post }) => {
+  const postWithHashtags = post.content.replace(
+    /(#\w+)/g,
+    '<span class="text-indigo-600">$1</span>',
+  );
+
+  const [likes, setLikes] = useState(post.likes_count);
+  const currenUser = dummyUserData;
+
+  const handleLike = async () => {};
+
   return (
     <div className="bg-white rounded-xl shadow p-4 space-y-4 w-full max-w-2xl">
       {/* user info */}
@@ -26,10 +37,38 @@ const PostCard = ({ post }) => {
       {post.content && (
         <div
           className="text-gray-800 text-sm whitespace-pre-line"
-          dangerouslySetInnerHTML={{ __html: post.content }}
+          dangerouslySetInnerHTML={{ __html: postWithHashtags }}
         />
       )}
       {/* images */}
+      <div className="grid grid-cols-2 gap-2">
+        {post.image_urls.map((img, index) => (
+          <img
+            src={img}
+            key={index}
+            className={`w-full h-48 object-cover rounded-lg ${post.image_urls.length === 1 && `col-span-2 h-auto`}`}
+            alt=""
+          />
+        ))}
+      </div>
+      {/* actions */}
+      <div className="flex items-center gap-4 text-gray-600 text-sm pt-2 border-t border-grauy-300">
+        <div className="flex items-center gap-1">
+          <Heart
+            className={`w-4 h-4 cursor-pointer ${likes.includes(currenUser._id) && "text-red-500 fill-red-500 "}`}
+            onClick={handleLike}
+          />
+          <span>{likes.length}</span>
+        </div>
+        <div className="flex items-center gap-1">
+          <MessageCircle className="w-4 h-4" />
+          <span>{12}</span>
+        </div>
+        <div className="flex items-center gap-1">
+          <Share2 className="w-4 h-4" />
+          <span>{7}</span>
+        </div>
+      </div>
     </div>
   );
 };
