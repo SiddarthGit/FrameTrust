@@ -20,7 +20,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
       <div className="w-full">
         <img
           onClick={() => navigate("/")}
-          src={assets.logo}
+          src={assets.frametrustlogo}
           className="w-26 ml-7 my-2 cursor-pointer"
           alt=""
         />
