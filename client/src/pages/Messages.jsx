@@ -7,13 +7,14 @@ const Messages = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="min-h-screen relative bg-slate-50">
-      <div className="max-w-6xl mx-auto p-6"></div>
+    <div className='min-h-screen relative bg-slate-50'>
+      <div className='max-w-6xl mx-auto p-6'></div>
       {/* title */}
-      <div className="mb-8">
-        <h1 className="text-3xl font-bold text-slate-900 mb-2 ">Messages</h1>
-        <p className="text-slate-600 ">Talk to your friends and family</p>
+      <div className='mb-8'>
+        <h1 className='text-3xl font-bold text-slate-900 mb-2'>Messages</h1>
+        <p className='text-slate-600'>Talk to your friends and family</p>
       </div>
+
       {/* connected users */}
 
       <div className="flex flex-col gap-3">
@@ -35,14 +36,14 @@ const Messages = () => {
             <div className="flex flex-col gap-2 mt-4">
               <button
                 onClick={() => navigate(`/messages/${user._id}`)}
-                className="size-10 flex items-center justify-center text-sm rounded bg-slate-100 hover:bg-slate-200 text-slate-800 active:scale-95 transition cursor-pointer gap-1  "
+                className="size-10 flex items-center justify-center text-sm rounded bg-slate-100 hover:bg-slate-200 text-slate-800 active:scale-95 transition cursor-pointer gap-1"
               >
                 <MessageSquare className="w-4 h-4" />
               </button>
 
               <button
                 onClick={() => navigate(`/profile/${user._id}`)}
-                className="size-10 flex items-center justify-center text-sm rounded bg-slate-100 hover:bg-slate-200 text-slate-800 active:scale-95 transition cursor-pointer gap-1  "
+                className="size-10 flex items-center justify-center text-sm rounded bg-slate-100 hover:bg-slate-200 text-slate-800 active:scale-95 transition cursor-pointer"
               >
                 <Eye className="w-4 h-4" />
               </button>

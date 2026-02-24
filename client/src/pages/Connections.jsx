@@ -29,9 +29,10 @@ const Connections = () => {
   return (
     <div className="min-h-screen bg-slate-50">
       <div className="max-w-6xl mx-auto p-6">
+
         {/* title */}
         <div className="mb-8">
-          <h1 className="text-3xl font-bold text-slate-900 mb-2">Messages</h1>
+          <h1 className="text-3xl font-bold text-slate-900 mb-2">Connections</h1>
           <p className="text-slate-600">
             Manage your network and Discover new Connections
           </p>
@@ -99,7 +100,7 @@ const Connections = () => {
                         onClick={() => navigate(`/profile/${user._id}`)}
                         className="w-full p-2 text-sm rounded bg-gradient-to-r from-indigo-500 to-purple-600 hover:from-indigo-600 hover:to-purple-700 active:scale-95 transition text-white cursor-pointer"
                       >
-                        view profile
+                        View Profile
                       </button>
                     }
                     {currentTab === "Following" && (
@@ -108,11 +109,19 @@ const Connections = () => {
                       </button>
                     )}
 
-                    {currentTab === "Following" && (
+                    {currentTab === "Pending" && (
                       <button className="w-full p-2 text-sm rounded bg-slate-100 hover:bg-slate-200 text-black active:scale-95 transition cursor-pointer">
-                        Unfollow
+                        Accept
                       </button>
                     )}
+
+                    {currentTab === "Connections" && (
+                      <button onClick={()=> navigate(`/messages/${user._id}`)} className="w-full p-2 text-sm rounded bg-slate-100 hover:bg-slate-200 text-slate-800 active:scale-95 transition cursor-pointer flex items-center justify-center gap-1">
+                        <MessageSquare className='w-4 h-4'/>
+                        Message
+                      </button>
+                    )}
+
                   </div>
                 </div>
               </div>
