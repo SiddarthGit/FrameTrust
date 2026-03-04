@@ -29,7 +29,7 @@ export const dummyUserData = {
   _id: "user_2zdFoZib5lNr614LgkONdD8WG32",
   email: "admin@example.com",
   full_name: "Nikita",
-  username: "nikita_00",
+  username: "nikita_0",
   bio: "🌍 Dreamer | 📚 Learner | 🚀 Doer\r\nExploring life one step at a time.\r\n✨ Staying curious. Creating with purpose.",
   profile_picture: sample_profile,
   cover_photo: sample_cover,
@@ -46,8 +46,8 @@ export const dummyUserData = {
 const dummyUser2Data = {
   ...dummyUserData,
   _id: "user_2",
-  username: "Siddharth Nair",
-  full_name: "siddharth_xyz",
+  username: "siddharth_xyz",
+  full_name: "Siddharth Nair",
   profile_picture:
     "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?q=80&w=200",
 };
