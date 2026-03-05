@@ -3,6 +3,7 @@ import cors from "cors";
 import connectDB from "./config/db.js";
 import dotenv from "dotenv";
 import { inngest, functions } from "./inngest/index.js";
+import { serve } from "inngest/express";
 
 // const __filename = fileURLToPath(import.meta.url);
 // const __dirname = path.dirname(__filename);
