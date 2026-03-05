@@ -2,6 +2,7 @@ import express from "express";
 import cors from "cors";
 import connectDB from "./config/db.js";
 import dotenv from "dotenv";
+import { inngest, functions } from "./inngest/index.js";
 
 // const __filename = fileURLToPath(import.meta.url);
 // const __dirname = path.dirname(__filename);
@@ -18,6 +19,7 @@ app.use(cors());
 app.get("/", (req, res) => {
   res.send("Server is running");
 });
+app.use("/api/inngest", serve({ client: inngest, functions }));
 
 const PORT = process.env.PORT || 4000;
 
