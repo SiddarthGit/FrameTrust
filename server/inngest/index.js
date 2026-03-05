@@ -1,5 +1,5 @@
 import { Inngest } from "inngest";
-import User from "../models/User";
+import User from "../models/User.js";
 
 // Create a client to send and receive events
 export const inngest = new Inngest({ id: "frametrust-app" });
@@ -15,7 +15,6 @@ const syncUserCreation = inngest.createFunction(
     let username = email_addresses[0].email_address.split("@")[0];
 
     // check availability of username
-
     const user = await User.findOne({ username });
 
     if (user) {
